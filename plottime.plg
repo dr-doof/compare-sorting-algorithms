@@ -1,0 +1,16 @@
+#!/usr/bin/gnuplot
+
+set term post font 'Helvatica,25'
+set xlabel 'n'
+set yrange [0:1000000]
+set autoscale x
+set ylabel 'comp'
+set xtics rotate by 315
+set xlabel rotate by 315
+set output 'plottime.eps'
+
+plot "data.txt" using 1:2 title 'Bubble' w l \
+,"data.txt" using 1:7 title 'Insertion' w l \
+,"data.txt" using 1:8 title 'Merge' w l \
+,"data.txt" using 1:9 title 'Quick' w l \
+,"data.txt" using 1:10 title 'Selection' w l ;
